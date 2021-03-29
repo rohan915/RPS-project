@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Bruh = prompt("pick how you will fight");
+        function computerPlay(){
+            let randomPick = Math.floor(Math.random() * 3) + 1;
+            let pick;
+            
+            switch(randomPick) {
+                case 1:
+                     pick = "rock";
+                     break;
+                case 2:
+                     pick = "scissors";
+                     break;
+                case 3:
+                     pick = "paper";
+                     break;
+            }
+
+            return pick;
+        }
+        let compSelection = computerPlay();
+        console.log(compSelection);
+        
+
+        let playSelection = Bruh.toLowerCase();
+
+        
+
+        function PlayRound(comp, player) {
+            if (comp == "rock" && player == "rock") {
+                return "its a Tie!";
+            } else if (comp == "rock" && player == "paper") {
+                return "player wins";
+            } else if (player == "rock" && comp == "paper") {
+                return "comp wins";
+            } else if (comp == "scissors" && player == "rock") {
+                return "player wins";
+            } else if (player == "scissors" && comp == "rock") {
+                return "comp wins";
+            } else if (comp == "scissors" && player == "scissors") {
+                return " its a tie";
+            } else if (comp == "scissors" && player == "rock") {
+                return "player wins";
+            } else if (player == "scissors" && comp == "rock") {
+                return "comp wins";
+            } else if (player == "paper" && comp == "scissors") {
+                return "comp wins";
+            } else if (comp == "paper" && player == "scissors") {
+                return "player wins";
+            } else if (comp == "paper" && player == "paper") {
+                return "its a tie";
+            } else if (comp == "rock" && player == "paper") {
+                return "player wins";
+            } else if (comp == "paper" && player == "rock") {
+                return "comp wins";
+            } else if (comp == "paper" && player == "scissors") {
+                return "player won";
+            } else if (player == "paper" && comp == "scissors") {
+                return "comp won";
+            }
+
+
+
+
+
+
+        }
+        alert(PlayRound(compSelection, playSelection));
+
+        
+
+ </script>
+</body>
+</html>
