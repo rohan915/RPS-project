@@ -1,0 +1,77 @@
+#rock {
+    height: 100px;
+    width: 100px;
+    font-size: 25px;
+    border-radius: 50%;
+    
+
+}   
+
+#paper {
+    height: 100px;
+    width: 100px;
+    font-size: 25px;
+    border-radius: 50%;
+    
+
+}   
+
+#scissors {
+    height: 100px;
+    width: 100px;
+    font-size: 25px;
+    border-radius: 50%;
+    
+
+}   
+
+
+#winner {
+    font-size: 70px;
+    position: relative;
+    bottom: 610px;
+    justify-content: center;
+    
+    display: flex;
+}
+
+.button {
+   background-color: lightgray;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 40px;
+}
+
+body {
+    background-color: yellow;
+}
+
+#PlayerScore {
+    position: relative;
+    bottom: 890px;
+
+    font-size: 60px;
+}
+
+#score {
+    display: flex;
+    justify-content: center;
+}
+
+#hash {
+    position: relative;
+    bottom: 890px;
+    font-size: 60px;
+}
+
+#CompScore {
+    position: relative;
+    bottom: 890px;
+    font-size: 60px;
+}
+
