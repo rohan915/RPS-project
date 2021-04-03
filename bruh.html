@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documnt</title>
+</head>
+<body>
+    <div class="box">
+        <button id="rock" class="button">Rock</button>
+        <button id="paper" class="button">Paper</button>
+        <button id="scissors" class="button">Scissors</button>
+    
+    </div>
+
+    <div id="winner">
+        
+    </div>
+
+    <div id="score">
+        <p id=PlayerScore>0</p>
+        <p id="hash">-</p>
+        <p id="CompScore">0</p>
+    </div>
+        
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let playScore = 0;
+        let compScore = 0;
+        let p = document.querySelector("#PlayerScore")
+        let c = document.querySelector("#CompScore");
+
+
+function computerPlay(){
+            let randomPick = Math.floor(Math.random() * 3) + 1;
+            let pick;
+            
+            switch(randomPick) {
+                case 1:
+                     pick = "rock";
+                     break;
+                case 2:
+                     pick = "scissors";
+                     break;
+                case 3:
+                     pick = "paper";
+                     break;
+            }
+
+            return pick;
+        }
+       
+
+
+        
+
+        function PlayRound(comp, player) {
+
+            if (playScore >= 5) {
+                playScore = 0
+                compScore = 0
+                c.textContent = "0"
+                p.textContent = "0"
+                
+            } else if (compScore >= 5) {
+                compScore = 0
+                playScore = 0
+                p.textContent ="0"
+                c.textContent = "0"
+            }
+
+
+            if (comp == "rock" && player == "rock") {
+                return "its a Tie!";
+            } else if (comp == "rock" && player == "paper") {
+                playScore++
+                p.textContent = playScore.toString()
+                return "you win";
+                
+                
+        
+            } else if (player == "rock" && comp == "paper") {
+                compScore++
+                c.textContent = compScore.toString()
+                return "computer wins";
+               
+            } else if (comp == "scissors" && player == "rock") {
+                playScore++
+                p.textContent = playScore.toString()
+                return "you win";
+              
+            } else if (player == "scissors" && comp == "rock") {
+                compScore++
+                c.textContent = compScore.toString()
+                return "computer wins";
+                
+            } else if (comp == "scissors" && player == "scissors") {
+                return " its a tie";
+
+            } else if (comp == "scissors" && player == "rock") {
+                playScore++
+                p.textContent = playScore.toString()
+                return "you win";
+                
+                
+            } else if (player == "scissors" && comp == "rock") {
+                compScore++
+                c.textContent = compScore.toString()
+                return "computer wins";
+                
+            } else if (player == "paper" && comp == "scissors") {
+                compScore++
+                c.textContent = compScore.toString()
+                return "computer wins";
+
+                
+            } else if (comp == "paper" && player == "scissors") {
+                playScore++
+                p.textContent = playScore.toString()
+                return "you win";
+               
+            } else if (comp == "paper" && player == "paper") {
+                return "its a tie";
+            } else if (comp == "rock" && player == "paper") {
+                playScore++
+                p.textContent = playScore.toString()
+                return "you win";
+                
+                
+            } else if (comp == "paper" && player == "rock") {
+                compScore++
+                c.textContent = compScore.toString()
+                return "computer win";
+                
+            } else if (comp == "paper" && player == "scissors") {
+                playScore++
+                p.textContent = playScore.toString()
+                return "you win";
+                
+               
+            } else if (player == "paper" && comp == "scissors") {
+                compScore++
+                c.textContent = compScore.toString()
+                return "computer wins";
+                
+                
+            }
+
+            
+
+            
+
+            
+
+
+
+
+
+
+        }
+        let playerSelection;
+        
+      
+
+
+
+        let button1 = document.querySelector("#rock");
+        let button2 = document.querySelector("#paper");
+        let button3 = document.querySelector("#scissors");
+        let winner = document.querySelector("#winner")
+
+        
+       
+
+        
+       
+        button1.addEventListener("click", () => {
+            playerSelection = "rock"
+            let computer = computerPlay()
+             let comp = PlayRound(computer, playerSelection)
+
+            
+
+             /*if (comp == "you win") {
+                 playScore += 1
+                 p.textContent = playScore.toString()
+             } else if (comp == "computer wins") {
+                 compScore += 1
+                 c.textContent = compScore.toString()
+             }*/
+
+            
+             
+        
+
+            winner.textContent = comp
+            
+
+})
+
+        button2.addEventListener("click", () => {
+            playerSelection = "paper";
+             let computer = computerPlay();
+             let comp = PlayRound(computer, playerSelection)
+
+          
+
+
+             /*if (comp == "you win") {
+                 playScore += 1
+                 p.textContent = playScore.toString()
+             } else if (comp == "computer wins") {
+                 compScore += 1
+                 c.textContent = compScore.toString()
+             } */
+        
+
+            winner.textContent = comp
+
+        })
+
+        button3.addEventListener("click", () => {
+            playerSelection = "scissors";
+             let computer = computerPlay();
+             let comp = PlayRound(computer, playerSelection)
+
+       
+         
+
+             
+
+            /* if (comp == "you win") {
+                 playScore += 1
+                 p.textContent = playScore.toString()
+             } else if (comp == "computer wins") {
+                 compScore += 1
+                 c.textContent = compScore.toString()
+             } */
+        
+
+            winner.textContent = comp
+        })
+
+        
+
+
+</script>
+       
+        
